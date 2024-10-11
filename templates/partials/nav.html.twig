@@ -9,6 +9,12 @@
                 <li class="nav-item">
                     <a class="nav-link {{ app.current_route starts with 'recipe.' ? 'active' : '' }}" href="{{ path('recipe.index') }}">Recettes</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ app.current_route starts with 'category.' ? 'active' : '' }}" href="{{ path('category.index') }}">Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ app.current_route starts with 'product.' ? 'active' : '' }}" href="{{ path('product.index') }}">Products</a>
+                </li>
             </ul>
         </div>
     </div>

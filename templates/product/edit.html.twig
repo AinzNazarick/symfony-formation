@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title "Categorie : " ~ product.name %}
+
+{%  block body %}
+
+    <h1>{{ product.name }}</h1>
+
+    {{ form(form) }}
+
+{% endblock %}

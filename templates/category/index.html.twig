@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catégories{% endblock %}
+
+{% block body %}
+    <h1>Toutes les catégories !</h1>
+    <div class="container mt-4">
+        <a class="btn btn-primary btn-sm" href="{{ path('category.create') }}">Créer une catégorie</a>
+    </div>
+    <div class="container mt-4">
+        <div class="row">
+            {% for category in categories %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-center" style="font-weight: bold; font-size: 1.25rem;">
+                                {{ category.name }}
+                            </h5>
+                            <div class="mt-auto">
+                                <div class="d-flex flex-column flex-md-row justify-content-between gap-2 mt-3">
+                                    <a href="{{ path('category.show', { 'id': category.id }) }}" class="btn btn-info btn-sm w-100 w-md-auto">Voir Détails</a>
+                                    <a href="{{ path('category.edit', { 'id': category.id }) }}" class="btn btn-warning btn-sm w-100 w-md-auto">Modifier</a>
+                                    <a href="{{ path('category.delete', { 'id': category.id }) }}" class="btn btn-danger btn-sm w-100 w-md-auto">Supprimer</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="col-12">
+                    <div class="alert alert-warning" role="alert">
+                        Aucune catégorie disponible.
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
